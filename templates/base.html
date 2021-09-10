@@ -9,9 +9,12 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-{% block content %}
+<div class="max-w-7xl mx-auto">
+    {% include 'navbar.html' %}
+    {% block content %}
 
-{% endblock content %}
-{% include 'scripts.html' %}
+    {% endblock content %}
+</div>
+
 </body>
 </html>
