@@ -1,19 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NurCRM</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'leads:lead-create' %}">Create new lead</a>
+<hr>
 <h1>This is all our leads</h1>
 <ul>
     {% for lead in leads %}
-    <li>{{ lead }}</li>
+    <div class="lead">
+        <li><a href="{% url 'leads:lead-detail' lead.pk %}">{{ lead.first_name }} {{ lead.last_name }}. Age: {{ lead.age }}</a></li>
+    </div>
     {% endfor %}
-
 </ul>
-</body>
-</html>
+{% endblock content %}

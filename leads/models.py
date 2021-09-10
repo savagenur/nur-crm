@@ -18,6 +18,7 @@ class Lead(models.Model):
 
 
 class Agent(models.Model):
+    objects = None
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
