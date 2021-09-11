@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Local:
     'leads.apps.LeadsConfig',
+    'agents.apps.AgentsConfig',
 
     # 3rd Party:
 
