@@ -23,6 +23,11 @@ class Lead(models.Model):
     organisation = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     agent = models.ForeignKey("Agent", blank=True, null=True, on_delete=models.SET_NULL)
     category = models.ForeignKey('Category', related_name='leads', blank=True, null=True, on_delete=models.SET_NULL)
+    description = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+    phone_number = models.CharField(max_length=30)
+    email = models.EmailField()
+
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -32,6 +37,7 @@ class Agent(models.Model):
     objects = None
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     organisation = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.user.email

@@ -27,8 +27,7 @@
                                 >
                             {{ agent.user.username }}
                         </a></h2>
-                        <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast
-                            vegan taxidermy. Gastropub indxgo juice poutine.</p>
+                        <p class="leading-relaxed text-base">{{agent.user.first_name}} {{agent.user.last_name}}</p>
                         <a href="{% url 'agents:agent-detail' agent.pk %}"
                            class="mt-3 text-indigo-500 inline-flex items-center">View this agent
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
